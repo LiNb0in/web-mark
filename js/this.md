@@ -36,8 +36,9 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
       }
     }; 
     const wrapperFun = obj.getNameFun();
-    wrapperFun();
+    wrapperFun(); // 可以看到getNameFun()函数的匿名函数其实是在全局执行的，所以this(在非严格模式下)自然指向window
   ```
   
 >   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局window<br>
->   **严格模式**  ：严格模式下getNameFun()函数返回的匿名函数this为undefined
+>   **严格模式**  ：严格模式下匿名函数与普通函数中无法直接获取全局变量中window的this，都为Undefined
+
