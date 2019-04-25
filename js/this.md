@@ -23,9 +23,9 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 >   * obj.getNameFun()：
 >     * **函数被作为某个对象的方法调用时this则指向这个对象，由此得知getNameFun()函数无论是在**严格模式**or**非严格模式**中this都是指向obj对象**
 >   * obj.getNameFun()():
-> 我们将代码改写一下:
   
   ```js
+    // 我们将代码改写一下
     const name = 'window';
     const obj = {
       name: 'obj',
