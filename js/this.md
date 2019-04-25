@@ -40,5 +40,5 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
   ```
   
 >   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局window<br>
->   **严格模式**  ：严格模式下匿名函数与普通函数中无法直接获取全局变量中window的this，都为Undefined
+>   **严格模式**：严格模式下匿名函数与在全局中直接执行的普通函数，无法直接获取全局变量中window的this，都为undefined
 
