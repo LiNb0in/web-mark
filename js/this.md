@@ -8,13 +8,12 @@
   
   const obj = {
     name: 'obj',
-    
     getNameFun: function () {
       return function () {
         return this.name;
       }
     }
-  } 
+  };
 console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 ```
 
@@ -24,9 +23,20 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
     getNameFun()函数无论是在**严格模式**or**非严格模式**中this都是指向obj对象
   * obj.getNameFun()()
   我们将代码改写一下:
+  
   ```js
+    const name = 'window';
+    const obj = {
+      name: 'obj',
+      getNameFun: function () {
+        return function () {
+          return this.name;
+        }
+      }
+    }; 
     const wrapperFun = obj.getNameFun();
     wrapperFun();
   ```
+  
   * **非严格模式**：在非严格模式下obj的getNameFun()函数其实返回的匿名函数的**this**实际是指向全局的window的，
   * **严格模式**：严格模式下getNameFun()函数返回的匿名函数的this为undefined
