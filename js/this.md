@@ -17,7 +17,7 @@
 console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 ```
 
-> 这段代码的我们只看结尾那段:
+> 我们只看结尾那段:
 > #### obj.getNameFun()()
 > * 可以分成两部分
 >   * obj.getNameFun()：
