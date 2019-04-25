@@ -39,5 +39,5 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
     wrapperFun();
   ```
   
->   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局的window的<br>
+>   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局window<br>
 >   **严格模式**  ：严格模式下getNameFun()函数返回的匿名函数this为undefined
