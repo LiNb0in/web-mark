@@ -30,11 +30,10 @@
    const min = Math.min.apply(null, number);
    console.log(max); // 60
    console.log(min); // 1
-  ```
+   ```
   > **注意：正常情况下上面这么做是没有问题的，但是如果你的传参超出了apply()方法的限制就会有风险(比方说上万个参数)，不同javascript引擎有不同的限制（JavaScript 核心中已经做了硬编码[参数个数限制在65536](https://bugs.webkit.org/show_bug.cgi?id=80797)）这个限制可能会导致参数‘丢失’比方说某个引擎限制了方法参数最多传入10个（只是假设）而传入的参数个数为11个甚至更多，那么真正通过参数传入函数内部的参数就只有10个而已，并不是一个完整的参数列表**。
 如果你的参数数组可能非常大，那么推荐你最好将参数数组做切块处理：
 
- <br>
 ```js
 // 摘自javascript|MDN
 function minOfArray(arr) {
@@ -51,6 +50,7 @@ function minOfArray(arr) {
 
 var min = minOfArray([5, 6, 2, 3, 7]);
 ```
+
 ---
 ## bind
  * 介绍
