@@ -16,7 +16,7 @@
   };
 console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 ```
-
+以上代码最终的打印结果是'window'，而不是'obj'为什么匿名函数没有取得其包含作用域的this对象呢?
 > 我们只看结尾那段:
 > #### obj.getNameFun()()
 > * 可以分成两部分
@@ -43,3 +43,19 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 
 >   **严格模式**：严格模式下匿名函数与在全局中直接执行的普通函数，无法直接获取全局变量中window的this，都为undefined
 
+解决办法:
+> 既然匿名函数无法直接获外部函数作用域的this对象那我们就讲这个this对象保存在一个变量中通过**闭包**的形式使匿名函数正确获取到外部函数的作用域
+```js
+    const name = 'window';
+  
+  const obj = {
+    name: 'obj',
+    getNameFun: function () {
+      const that = this;
+      return function () {
+        return that.name;
+      }
+    }
+  };
+console.log(obj.getNameFun()()); // "obj"(在非严格模式下)
+```
