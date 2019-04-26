@@ -3,8 +3,10 @@
 > 它们都可以用来改变this的指向，其中call()和apply的方法类似，区别在于传参方式，call()方法接受参数列表(a1, a2, a3,...)，apply()方法接受参数是一个参数数组([a1, a2, a3, ...])。
 ## apply
   * 介绍
+  
     > apply()方法接受一个给定的this，和一个参数数组。
     * 语法
+    
       > fun.apply(this, [args]);
     * 参数
       * `this`<br>可选，fun函数运行时使用的this，注意：**在非严格模式下当this为null或undefined时将会自动指向全局对象**
