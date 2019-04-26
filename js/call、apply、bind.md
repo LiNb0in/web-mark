@@ -19,7 +19,6 @@
    arr1.push.apply(arr1, arr2);
    console.log(arr1); // [1, 2, 3, 4, 5, 6];
   ```
-
    * `查询一个数组中的最大值与最小值`
   ```js
    const number = [45, 1, 15, 60];
