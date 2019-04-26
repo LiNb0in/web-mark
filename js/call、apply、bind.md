@@ -1,0 +1,18 @@
+# 块级作用域
+> **块级作用域**：函数执行时**活动对象**所在的作用域链就是一个块级作用域
+* 来看一段代码:
+```js
+  function consoleNumber (number) {
+    const arr = [];
+    for(var i=0; i<number; i+=1) {
+      arr[i] = function () {
+        return i;
+      }
+    }
+    console.log(i);
+    return arr;
+  }
+```
+> 在一个函数内部定义的函数将会包含**外部函数**的活动对象添加到它的作用域链中。
+这个函数会返回一个数组，表面上来看每个数组项返回的应该都是自己对应的索引值。然而实际上，consoleNumber()函数内部的每个函数的**作用域链**
+都会保存着外部函数(consoleNumber()函数)的**活动对象**。所以，返回的数组项中每个项并非是对应的下标，而都是最终在consoleNumber()函数作用域上i的值。
