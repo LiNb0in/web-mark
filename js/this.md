@@ -21,7 +21,7 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
 > #### obj.getNameFun()()
 > * 可以分成两部分
 >   * obj.getNameFun()：
->     * **函数被作为某个对象的方法调用时this则指向这个对象，由此得知getNameFun()函数无论是在**严格模式**or**非严格模式**中this都是指向obj对象**
+>     * **函数被作为某个对象的方法调用时this则指向这个对象**。getNameFun()函数无论是在**严格模式**or**非严格模式**中this都是指向obj对象
 >   * obj.getNameFun()():
   
   ```js
@@ -59,3 +59,17 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
   };
 console.log(obj.getNameFun()()); // "obj"(在非严格模式下)
 ```
+#### 还有一些特殊情况
+```js
+  const name = 'window';
+  const obj = {
+    name: 'obj',
+    getNanme: function () {
+      return this.name;
+    }
+  };
+  const a1 = obj.getName();   // obj
+  const a2 = (obj.getName)(); // obj
+  const a3 = (obj.getName = obj.getName)(); // window(非严格模式下)
+```
+> 正常情况下也不会像a2、a3这样调用方法，但是，需要注意的是语法的细微变化，都有可能会以外改变this的值。
