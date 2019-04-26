@@ -12,14 +12,14 @@
     * 返回值
       调用有指定this值和参数的函数的结果。
  * 使用
-  * `合并两个数组`
+   * `合并两个数组`
   ```js
    var arr1 = [1, 2, 3];
    var arr2 = [4, 5, 6];
    arr1.push.apply(arr1, arr2);
    console.log(arr1); // [1, 2, 3, 4, 5, 6];
   ```
-  * `查询一个数组中的最大值与最小值`
+   * `查询一个数组中的最大值与最小值`
   ```js
    const number = [45, 1, 15, 60];
    const max = Math.max.apply(null, number);
