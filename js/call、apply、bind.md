@@ -1,7 +1,7 @@
 > [this](https://github.com/Linbiiiin/web-mark/blob/master/js/this.md)有关this的介绍
 # apply、bind、call
 > 它们都可以用来改变this的指向
-# apply
+## apply
   * 介绍
     * 语法
       > fun.apply(this, [args])。
@@ -14,6 +14,6 @@
   ```js
     
   ```
-# bind
+## bind
   * 
-# call
+## call
