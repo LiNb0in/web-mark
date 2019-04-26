@@ -39,6 +39,24 @@ console.log(obj.getNameFun()()); // "window"(在非严格模式下)
     wrapperFun(); // 可以看到getNameFun()函数的匿名函数其实是在全局执行的，所以this(在非严格模式下)自然指向window
   ```
   
->   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局window<br>
+>   **非严格模式**：在非严格模式下obj的getNameFun()函数返回的匿名函数**this**实际是指向全局window<br
+
 >   **严格模式**：严格模式下匿名函数与在全局中直接执行的普通函数，无法直接获取全局变量中window的this，都为undefined
 
+
+#### 块级作用域
+> **块级作用域**：函数执行时**活动对象**所在的作用域链就是一个块级作用域
+* 来看一段代码:
+```js
+  function consoleNumber (number) {
+    const arr = [];
+    for(var i=0; i<number; i+=1) {
+      arr[i] = function () {
+        return i;
+      }
+    }
+    console.log(i);
+    return arr;
+  }
+```
+这个函数会返回一个数组，表面上来看每个数组项返回的应该都是自己对应的索引值。然而实际上，每个函数都返回10，
