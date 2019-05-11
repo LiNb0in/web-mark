@@ -1,4 +1,4 @@
-> [this](https://github.com/Linbiiiin/web-mark/blob/master/js/this.md)有关this的介绍
+> 有关[this](https://github.com/Linbiiiin/web-mark/blob/master/js/this.md)的介绍
 # apply、bind、call
 > 它们都可以用来改变this的指向，其中call()和apply的方法类似，区别在于传参方式，call()方法接受参数列表(a1, a2, a3,...)，apply()方法接受参数是一个参数数组([a1, a2, a3, ...])。
 ## apply
